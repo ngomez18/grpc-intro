@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package coffeeshop;
+
+option go_package = "github.com/ngomez18/grpc-intro/generated/go;coffeeshop";
+
+// Coffee drink size enum
+enum DrinkSize {
+  SMALL = 0;
+  MEDIUM = 1;
+  LARGE = 2;
+}
+
+// Coffee drink item
+message DrinkItem {
+  int32 id = 1;
+  string name = 2;
+  string description = 3;
+  DrinkSize size = 4;
+  double price = 5;
+}
+
+// Request to add a drink to menu
+message AddDrinkRequest {
+  string name = 1;
+  string description = 2;
+  double base_price = 3;  // Price for small size
+  bool available = 4;
+}
+
+// Response for adding a drink
+message AddDrinkResponse {
+  DrinkItem drink = 1;
+  bool success = 2;
+  string message = 3;
+}
+
+// Request to get menu items
+message GetMenuRequest {}
+
+// Response for getting menu
+message GetMenuResponse {
+  repeated DrinkItem drinks = 1;
+  string message = 2;
+}
+
+// Coffee Shop Service definition
+service CoffeeShopService {
+  // Menu management
+  rpc GetMenu(GetMenuRequest) returns (GetMenuResponse);
+  rpc AddDrink(AddDrinkRequest) returns (AddDrinkResponse);
+}
