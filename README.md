@@ -40,3 +40,11 @@ grpc-intro/
     └── generate_go.sh
 ```
 Feel free to add any additional files you need for your scripts to work (Python requirements file, Go module file, etc).
+
+## Step 2
+Now that we're familiar with the process of generating code from a proto file, it's time to use some more modern tooling. [Buf](https://buf.build/docs/cli/) is a tool that encapsulated linting and code generation, among many other features to facilitate the handling of protobufs.
+
+### Using Buf
+Go through the documentation for Buf and try to replace the scripts we built with a `buf.yaml` file. Try to encapsulate everything into a Makefile, including linting and file generation.
+
+### Expected output
