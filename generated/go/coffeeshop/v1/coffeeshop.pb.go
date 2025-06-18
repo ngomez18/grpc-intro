@@ -403,8 +403,7 @@ const file_coffeeshop_v1_coffeeshop_proto_rawDesc = "" +
 	"\x10DRINK_SIZE_LARGE\x10\x032\xaa\x01\n" +
 	"\x11CoffeeShopService\x12H\n" +
 	"\aGetMenu\x12\x1d.coffeeshop.v1.GetMenuRequest\x1a\x1e.coffeeshop.v1.GetMenuResponse\x12K\n" +
-	"\bAddDrink\x12\x1e.coffeeshop.v1.AddDrinkRequest\x1a\x1f.coffeeshop.v1.AddDrinkResponseB\xb1\x01\n" +
-	"\x11com.coffeeshop.v1B\x0fCoffeeshopProtoP\x01Z6github.com/ngomez18/grpc-intro/generated/go;coffeeshop\xa2\x02\x03CXX\xaa\x02\rCoffeeshop.V1\xca\x02\rCoffeeshop\\V1\xe2\x02\x19Coffeeshop\\V1\\GPBMetadata\xea\x02\x0eCoffeeshop::V1b\x06proto3"
+	"\bAddDrink\x12\x1e.coffeeshop.v1.AddDrinkRequest\x1a\x1f.coffeeshop.v1.AddDrinkResponseB8Z6github.com/ngomez18/grpc-intro/generated/go;coffeeshopb\x06proto3"
 
 var (
 	file_coffeeshop_v1_coffeeshop_proto_rawDescOnce sync.Once

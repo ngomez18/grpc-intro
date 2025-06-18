@@ -1,18 +1,19 @@
-version: v1
-managed:
-  enabled: true
+version: v2
+clean: true
+inputs:
+  - directory: proto
 plugins:
-  # Python plugins
-  - plugin: buf.build/protocolbuffers/python
-    out: generated/python
-  - plugin: buf.build/protocolbuffers/pyi
-    out: generated/python
   # Go plugins
-  - plugin: buf.build/protocolbuffers/go
+  - remote: buf.build/protocolbuffers/go
     out: generated/go
     opt:
       - paths=source_relative
-  - plugin: buf.build/grpc/go
+  - remote: buf.build/grpc/go
     out: generated/go
     opt:
       - paths=source_relative
+  # Python plugins
+  - remote: buf.build/protocolbuffers/python
+    out: generated/python
+  - remote: buf.build/protocolbuffers/pyi
+    out: generated/python
