@@ -19,7 +19,7 @@ For Go see:
 
 ### Expected output
 After being able to generate the code via command line, you should be able to create scripts as such:
-- `scripts/generate_pytho.sh`
+- `scripts/generate_python.sh`
 - `scripts/generate_go.sh`
 
 And the generated directory should have the following structure
@@ -42,9 +42,42 @@ grpc-intro/
 Feel free to add any additional files you need for your scripts to work (Python requirements file, Go module file, etc).
 
 ## Step 2
-Now that we're familiar with the process of generating code from a proto file, it's time to use some more modern tooling. [Buf](https://buf.build/docs/cli/) is a tool that encapsulated linting and code generation, among many other features to facilitate the handling of protobufs.
+Now that we're familiar with the process of generating code from a proto file, it's time to use some more modern tooling. [Buf](https://buf.build/docs/cli/) is a tool that encapsulates linting and code generation, among many other features to facilitate the handling of protobufs.
 
 ### Using Buf
 Go through the documentation for Buf and try to replace the scripts we built with a `buf.yaml` file. Try to encapsulate everything into a Makefile, including linting and file generation.
 
 ### Expected output
+The project should have the following structure after implementing these changes
+```
+├── Makefile
+├── README.md
+├── buf.gen.yaml
+├── buf.yaml
+├── generated
+│   ├── go
+│   │   └── coffeeshop
+│   │       └── v1
+│   │           ├── coffeeshop.pb.go
+│   │           └── coffeeshop_grpc.pb.go
+│   └── python
+│       └── coffeeshop
+│           └── v1
+│               ├── coffeeshop_pb2.py
+│               └── coffeeshop_pb2.pyi
+├── go.mod
+├── go.sum
+├── proto
+│   └── coffeeshop
+│       └── v1
+│           └── coffeeshop.proto
+└── requirements.txt
+```
+As you can see, the structure changes a little bit. Try to solve all of the warnings we get from the buf linter to get closer to this structure.
+I expect to be able to run
+```
+make lint
+make fmt
+make generate
+```
+To lint, format and generate the code.
