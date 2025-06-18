@@ -1,9 +1,8 @@
-
-### Solution
+# Solution
 The first step to work effectively with proto files is to install the protocol buffer compiler:
 - https://grpc.io/docs/protoc-installation/
 - https://protobuf.dev/installation/
-#### Python
+## Python
 To start, we need to install some dependencies into our Python environment
 ```
 grpcio
@@ -31,7 +30,7 @@ This will generate two files in `generated/python/`
 
 To encapsulate this into a script, we could first add our dependencies to a `requirements.txt` file, and then a script to call this command.
 
-#### Go
+## Go
 Again, we start by installing some dependencies
 ```
 $ go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
