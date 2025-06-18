@@ -1,0 +1,18 @@
+version: v1
+managed:
+  enabled: true
+plugins:
+  # Python plugins
+  - plugin: buf.build/protocolbuffers/python
+    out: generated/python
+  - plugin: buf.build/protocolbuffers/pyi
+    out: generated/python
+  # Go plugins
+  - plugin: buf.build/protocolbuffers/go
+    out: generated/go
+    opt:
+      - paths=source_relative
+  - plugin: buf.build/grpc/go
+    out: generated/go
+    opt:
+      - paths=source_relative

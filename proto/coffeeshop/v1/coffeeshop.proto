@@ -1,14 +1,15 @@
 syntax = "proto3";
 
-package coffeeshop;
+package coffeeshop.v1;
 
 option go_package = "github.com/ngomez18/grpc-intro/generated/go;coffeeshop";
 
 // Coffee drink size enum
 enum DrinkSize {
-  SMALL = 0;
-  MEDIUM = 1;
-  LARGE = 2;
+  DRINK_SIZE_UNSPECIFIED = 0;
+  DRINK_SIZE_SMALL = 1;
+  DRINK_SIZE_MEDIUM = 2;
+  DRINK_SIZE_LARGE = 3;
 }
 
 // Coffee drink item
@@ -24,7 +25,7 @@ message DrinkItem {
 message AddDrinkRequest {
   string name = 1;
   string description = 2;
-  double base_price = 3;  // Price for small size
+  double base_price = 3; // Price for small size
   bool available = 4;
 }
 
